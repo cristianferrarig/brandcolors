@@ -1,0 +1,228 @@
+/**
+ * Helpers.
+ */
+
+.cf:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+/**
+ * Typography.
+ */
+
+body,
+input {
+  font: 16px Tenso, sans-serif;
+}
+
+@media screen and ( max-width: 768px ) {
+
+  body,
+  input {
+    text-align: center;
+  }
+
+}
+
+
+
+/**
+ * Page.
+ */
+
+@media screen and ( max-width: 768px ) {
+
+  body {
+    margin: auto;
+    width: 80%;
+    box-shadow: -1px 0 #ddd, 1px 0 #ddd;
+  }
+
+  .site-header {
+    box-shadow: 0 1px #ddd;
+  }
+
+}
+
+@media screen and ( min-width: 769px ) {
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+  }
+
+  body.admin-bar .site-header {
+    top: 32px;
+  }
+
+  .site-main {
+    margin-left: 15%;
+    box-shadow: -1px 0 #ddd;
+  }
+
+}
+
+
+/**
+ * Site header.
+ */
+
+.site-title {
+  width: 46px;
+  height: 34px;
+  background: #000 url( '../../img/logo.svg' );
+  margin: 43px auto;
+  text-indent: -99999px;
+}
+
+
+/**
+ * Search.
+ */
+
+.search {
+  box-shadow: 0 1px #ddd;
+}
+
+.search-input {
+  -webkit-appearance: none;
+
+  background: transparent;
+  border: none;
+  padding: 20px;
+  width: 100%;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+
+/**
+ * Collections.
+ */
+
+.collections {
+  padding: 20px;
+}
+
+@media screen and ( max-width: 768px ) {
+
+  .collections {
+    display: none;
+  }
+
+}
+
+
+/**
+ * Brands.
+ */
+
+.brand {
+  padding: 20px;
+  box-shadow: inset 0 1px #ddd;
+}
+
+.brand-title {
+  font-weight: bold;
+}
+
+.brand-colors {
+  position: relative;
+}
+
+@media screen and ( max-width: 768px ) {
+
+  .brand-header {
+    margin-bottom: 20px
+  }
+
+}
+
+@media screen and ( min-width: 769px ) {
+
+  .brand {
+    padding: 20px 10px 20px 20px;
+  }
+
+  .brand-header {
+    width: 25%;
+    float: left;
+  }
+
+  .brand-title {
+    font-size: 18px;
+    line-height: 40px;
+  }
+
+  .brand-colors {
+    width: 75%;
+    float: right;
+  }
+
+}
+
+
+/**
+ * Colors.
+ */
+
+.color-container {
+  height: 40px;
+}
+
+.color {
+  height: 40px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.color-code {
+  color: white;
+  padding: 0;
+  border: none;
+  background: none;
+  line-height: 40px;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media screen and ( max-width: 768px ) {
+
+  .color-container {
+    width: auto !important;
+    margin-top: 10px;
+  }
+
+}
+
+@media screen and ( min-width: 769px ) {
+
+  .color-container {
+    float: left;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+
+  .color:hover {
+    position: absolute;
+    right: 10px;
+    left: 10px;
+  }
+
+  .color-code {
+    opacity: 0;
+  }
+
+  .color:hover .color-code {
+    opacity: 1;
+  }
+
+}
