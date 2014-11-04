@@ -1,4 +1,14 @@
 <?php
+/**
+ * Functions
+ */
+
+/**
+ * Include Static Templates plugin.
+ */
+require_once get_template_directory() . '/library/static-templates/static-templates.php';
+
+
 
 function bc_assets() {
 
