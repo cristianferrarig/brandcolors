@@ -1,0 +1,1 @@
+<div class="collections">Collections</div>

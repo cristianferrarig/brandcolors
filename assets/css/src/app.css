@@ -75,7 +75,7 @@ input {
 .site-title {
   width: 46px;
   height: 34px;
-  background: #000 url( '../../img/logo.svg' );
+  background: #000 url( '../img/logo.svg' );
   text-indent: -99999px;
   margin: auto;
 }
@@ -138,8 +138,7 @@ input {
 }
 
 .search-input {
-  -webkit-appearance: none;
-
+  appearance: none;
   background: transparent;
   border: none;
   padding: 20px;

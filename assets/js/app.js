@@ -1,0 +1,1 @@
+jQuery(function(){jQuery(".color").click(function(){jQuery(this).find(".color-code").select()});var a=jQuery("#search-input");a.keyup(function(){var b=a.val().toLowerCase();jQuery(".brand").each(function(){var a=jQuery(this).attr("data-brand-name").toLowerCase();0==a.indexOf(b)?jQuery(this).show():jQuery(this).hide()})})});
