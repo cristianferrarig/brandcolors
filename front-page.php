@@ -34,7 +34,7 @@ if ( $posts ) : foreach ( $posts as $post ) : setup_postdata( $post );
   $source_url  = get_post_meta( $post->ID, '_source_url', true );
 
 ?>
-  <article class="brand cf" data-brand-id="<?php the_id(); ?>" data-brand-name="<?php the_title_attribute(); ?>">
+  <article <?php post_class( 'brand cf' ); ?> data-brand-id="<?php the_id(); ?>" data-brand-name="<?php the_title_attribute(); ?>">
     <header class="brand-header">
       <h1 class="brand-title">
         <?php if ( ! empty( $brand_url ) ) echo "<a href='$brand_url' target='_blank'>"; ?>

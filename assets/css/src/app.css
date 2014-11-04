@@ -8,14 +8,19 @@
   clear: both;
 }
 
+.genericon {
+  position: relative;
+  top: 2px;
+}
+
 
 /**
  * Typography.
  */
 
-body,
-input {
-  font: 16px Tenso, sans-serif;
+body {
+  font: 16px/1.5 'Source Sans Pro', sans-serif;
+  color: #333;
 }
 
 @media screen and ( max-width: 768px ) {
@@ -25,6 +30,15 @@ input {
     text-align: center;
   }
 
+}
+
+
+/**
+ * Forms.
+ */
+
+input {
+  font: 16px 'Source Sans Pro', sans-serif;
 }
 
 
@@ -47,6 +61,11 @@ input {
 }
 
 @media screen and ( min-width: 769px ) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
 
   .site-header {
     position: fixed;
@@ -80,12 +99,29 @@ input {
   margin: auto;
 }
 
+.site-title a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .widget {
   padding: 20px;
   box-shadow: 0 1px #ddd;
 }
 
+.widget-nav {
+  line-height: 20px;
+}
+
+.widget-nav li + li {
+  margin-top: 10px;
+  padding-top: 10px;
+  box-shadow: inset 0 1px #ddd;
+}
+
 .widget-nav a {
+  vertical-align: top;
   color: #999;
   text-decoration: none;
   font-size: 14px;
@@ -147,6 +183,7 @@ input {
   border: none;
   padding: 20px;
   width: 100%;
+  height: 60px;
 }
 
 .search-input:focus {
@@ -161,6 +198,7 @@ input {
 .collections {
   padding: 20px;
   box-shadow: 0 1px #ddd;
+  line-height: 20px;
 }
 
 @media screen and ( max-width: 768px ) {
@@ -241,9 +279,10 @@ input {
   padding: 0;
   border: none;
   background: none;
-  line-height: 40px;
+  height: 40px;
   cursor: pointer;
   text-align: center;
+  font: 16px 'Brandon Grotesque', sans-serif;
 }
 
 .color.light .color-code {
@@ -279,6 +318,47 @@ input {
 
   .color:hover .color-code {
     opacity: 1;
+  }
+
+}
+
+
+/**
+ * Entry.
+ */
+
+.entry {
+  padding: 30px;
+}
+
+.entry-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.entry-content {
+  color: #666;
+  text-align: left;
+}
+
+.entry-content h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.entry-content > * {
+  margin-top: 1.5em;
+}
+
+@media screen and ( min-width: 769px ) {
+
+  .entry {
+    padding: 42px 60px 60px;
+  }
+
+  .entry-content {
+    width: 480px;
+    margin-top: 42px;
   }
 
 }

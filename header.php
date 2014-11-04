@@ -10,14 +10,14 @@
   <body <?php body_class(); ?>>
     <header class="site-header">
       <div class="widget widget-title">
-        <h1 class="site-title">BrandColors</h1>
+        <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>">BrandColors</a></h1>
       </div>
 
       <div class="widget widget-nav">
         <ul>
-          <li><a href="<?php echo site_url( '/about/' ); ?>">About</a></li>
-          <li><a href="<?php echo site_url( '/contribute/' ); ?>">Contribute</a></li>
-          <li><a href="https://twitter.com/brandcolorsnet" target="_blank">@brandcolorsnet</a></li>
+          <li><a href="<?php echo site_url( '/about/' ); ?>"><i class="genericon genericon-info"></i> About</a></li>
+          <li><a href="<?php echo site_url( '/contribute/' ); ?>"><i class="genericon genericon-plus"></i> Contribute</a></li>
+          <li><a href="https://twitter.com/brandcolorsnet" target="_blank"><i class="genericon genericon-twitter"></i> @brandcolorsnet</a></li>
         </ul>
       </div>
 
