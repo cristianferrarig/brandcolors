@@ -12,12 +12,11 @@ locate_template( 'partials/collection-toolbar.php', true );
 locate_template( 'library/phpColors/src/Mexitek/PHPColors/Color.php', true );
 use Mexitek\PHPColors\Color;
 
-
-
 $args = array(
   'posts_per_page' => -1,
   'orderby'        => 'title',
   'order'          => 'ASC',
+  'include'        => ( isset( $_GET['brands'] ) ? $_GET['brands'] : '' ),
   'post_type'      => 'brand'
 );
 
