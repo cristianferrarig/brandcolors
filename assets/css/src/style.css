@@ -28,7 +28,6 @@ input {
 }
 
 
-
 /**
  * Page.
  */
@@ -77,8 +76,36 @@ input {
   width: 46px;
   height: 34px;
   background: #000 url( '../../img/logo.svg' );
-  margin: 43px auto;
   text-indent: -99999px;
+}
+
+.widget {
+  padding: 20px;
+  box-shadow: 0 1px #ddd;
+}
+
+.widget-title {
+  padding-top: 43px;
+  padding-bottom: 43px;
+}
+
+.addthis_native_toolbox iframe,
+#___plusone_0 {
+  vertical-align: top !important;
+}
+
+.addthis_button_tweet,
+.addthis_button_google_plusone,
+.addthis_button_facebook_like {
+  float: none !important;
+  display: block;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.addthis_button_google_plusone,
+.addthis_button_facebook_like {
+  margin-top: 10px;
 }
 
 
