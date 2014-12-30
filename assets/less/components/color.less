@@ -1,0 +1,48 @@
+//
+// COLOR
+//
+
+
+.color {
+  &.light .color-code {
+    color: black;
+  }
+
+  .color-inner {
+    border-radius: 2px;
+  }
+
+  .color-code {
+    box-shadow: none !important;
+    background: transparent;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+
+  @media @mq-sm-max {
+    width: auto !important;
+    margin-top: 10px;
+  }
+
+  @media @mq-lg-min {
+    float: left;
+    box-sizing: border-box;
+    padding: 0 10px;
+
+    .color-inner:hover {
+      position: absolute;
+      right: 10px;
+      left: 10px;
+      z-index: 1;
+
+      .color-code {
+        opacity: 1;
+      }
+    }
+
+    .color-code {
+      opacity: 0;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-    </main>
+    </section>
 
     <?php wp_footer(); ?>
   </body>

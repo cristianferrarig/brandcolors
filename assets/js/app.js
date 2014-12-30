@@ -1,1 +1,0 @@
-jQuery(function(a){a(".color").click(function(){a(this).find(".color-code").select()});var b=a("#search-input");b.keyup(function(){var c=b.val().toLowerCase();a(".brand").each(function(){var b=a(this).attr("data-brand-name").toLowerCase();0==b.indexOf(c)?a(this).show():a(this).hide()})})});

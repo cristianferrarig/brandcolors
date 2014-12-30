@@ -1,0 +1,44 @@
+//
+// FORMS
+//
+
+
+// TEXT INPUTS
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2px;
+  box-shadow: inset 0 0 0 2px fade( black, 10% );
+
+  &::placeholder {
+    color: #b6b6b6;
+  }
+}
+
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"] {
+  height: 40px;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+
+  &::-webkit-search-decoration {
+    display: none;
+  }
+}

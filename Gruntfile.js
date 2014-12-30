@@ -7,36 +7,44 @@ module.exports = function( grunt ) {
     pkg: grunt.file.readJSON( 'package.json' ),
 
     watch: {
-      css: {
-        files: [ 'assets/css/src/*.css' ],
-        tasks: [ 'cssmin', 'autoprefixer' ]
+      options: {
+        livereload: true
+      },
+      less: {
+        files: 'assets/less/**/*',
+        tasks: [ 'less:build', 'autoprefixer:build', 'cssmin:build' ]
       },
       js: {
-        files: [ 'assets/js/src/*.js' ],
-        tasks: [ 'uglify' ]
+        files: 'assets/js/src/**/*',
+        tasks: 'uglify:build'
       }
     },
 
-    cssmin: {
+    less: {
       build: {
-        files: {
-          'assets/css/app.css': [ 'assets/css/src/reset.css', 'assets/css/src/app.css' ]
-        }
+        src: 'assets/less/brandcolors.less',
+        dest: 'assets/css/src/brandcolors.css'
       }
     },
 
     autoprefixer: {
       build: {
-        src: 'assets/css/app.css',
-        dest: 'assets/css/app.css'
+        src: 'assets/css/src/brandcolors.css',
+        dest: 'assets/css/src/brandcolors.css'
+      }
+    },
+
+    cssmin: {
+      build: {
+        src: 'assets/css/src/brandcolors.css',
+        dest: 'assets/css/master.css'
       }
     },
 
     uglify: {
       build: {
-        files: {
-          'assets/js/app.js': [ 'assets/js/src/app.js' ]
-        }
+        src: 'assets/js/src/brandcolors.js',
+        dest: 'assets/js/master.js'
       }
     }
 

@@ -1,0 +1,81 @@
+//
+// HEADER
+//
+
+
+.site-header {
+  padding: 20px;
+  color: black;
+
+  a {
+    color: inherit;
+  }
+
+  .logo {
+    display: block;
+    width: 46px;
+    height: 34px;
+  }
+
+  .description {
+    margin: 20px 0;
+  }
+
+  .share-btn {
+    display: block;
+    margin-top: 10px;
+
+    .genericon {
+      margin-right: 10px;
+    }
+
+    &.twitter {
+      &:hover {
+        color: #55acee;
+      }
+
+      .genericon {
+        color: #55acee;
+      }
+    }
+
+    &.facebook {
+      &:hover {
+        color: #3b5998;
+      }
+
+      .genericon {
+        color: #3b5998;
+      }
+    }
+
+    &.googleplus {
+      &:hover {
+        color: #dd4b39;
+      }
+
+      .genericon {
+        color: #dd4b39;
+      }
+    }
+  }
+
+  @media @mq-sm-max {
+    text-align: center;
+
+    .logo {
+      margin: auto;
+    }
+  }
+
+  @media @mq-lg-min {
+    padding: 40px;
+    float: left;
+    width: 300px;
+    margin-left: -300px;
+
+    .description {
+      margin: 40px 0;
+    }
+  }
+}
