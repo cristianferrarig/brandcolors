@@ -1,6 +1,3 @@
 [submodule "library/phpColors"]
 	path = library/phpColors
 	url = https://github.com/mexitek/phpColors
-[submodule "library/genericons"]
-	path = library/genericons
-	url = git@github.com:Automattic/Genericons.git
