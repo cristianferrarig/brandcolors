@@ -5,6 +5,8 @@
 
   <h2 class="description"><?php bloginfo( 'description', 'display' ); ?></h2>
 
+  <input id="search" class="search" type="search" placeholder="Search brands &hellip;">
+
   <?php
 
   $btns = array(

@@ -7,10 +7,10 @@ $color_count = count( $colors );
 
 ?>
 
-<article class="brand cf" data-brand-id="<?php the_id(); ?>" data-brand-name="<?php the_title_attribute(); ?>">
+<article id="brand-<?php the_id(); ?>" class="brand cf" data-brand-id="<?php the_id(); ?>" data-brand-name="<?php the_title_attribute(); ?>">
   <header class="brand-header">
     <h1 class="brand-title"><?php the_title(); ?></h1>
-    <i class="brand-check genericon genericon-checkmark"></i>
+    <span class="brand-check"></span>
   </header>
 
   <div class="brand-colors cf">

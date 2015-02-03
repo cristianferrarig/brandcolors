@@ -5,7 +5,7 @@
 
 .site-header {
   padding: 20px;
-  color: black;
+  color: #3d464d;
 
   a {
     color: inherit;
@@ -17,8 +17,14 @@
     height: 34px;
   }
 
+  .description,
+  .search,
+  .share-btns {
+    margin-top: 20px;
+  }
+
   .description {
-    margin: 20px 0;
+    color: #7b8994;
   }
 
   .share-btn {
@@ -62,9 +68,14 @@
 
   @media @mq-sm-max {
     text-align: center;
+    box-shadow: 0 1px fade( #3d464d, 15% );
 
     .logo {
       margin: auto;
+    }
+
+    .share-btns {
+      display: none;
     }
   }
 
@@ -74,8 +85,10 @@
     width: 300px;
     margin-left: -300px;
 
-    .description {
-      margin: 40px 0;
+    .description,
+    .search,
+    .share-btns {
+      margin-top: 40px;
     }
   }
 }

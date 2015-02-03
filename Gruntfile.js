@@ -12,39 +12,24 @@ module.exports = function( grunt ) {
       },
       less: {
         files: 'assets/less/**/*',
-        tasks: [ 'less:build', 'autoprefixer:build', 'cssmin:build' ]
+        tasks: [ 'less:build', 'autoprefixer:build' ]
       },
       js: {
-        files: 'assets/js/src/**/*',
-        tasks: 'uglify:build'
+        files: 'assets/js/**/*'
       }
     },
 
     less: {
       build: {
         src: 'assets/less/brandcolors.less',
-        dest: 'assets/css/src/brandcolors.css'
+        dest: 'assets/css/brandcolors.css'
       }
     },
 
     autoprefixer: {
       build: {
-        src: 'assets/css/src/brandcolors.css',
-        dest: 'assets/css/src/brandcolors.css'
-      }
-    },
-
-    cssmin: {
-      build: {
-        src: 'assets/css/src/brandcolors.css',
-        dest: 'assets/css/master.css'
-      }
-    },
-
-    uglify: {
-      build: {
-        src: 'assets/js/src/brandcolors.js',
-        dest: 'assets/js/master.js'
+        src: 'assets/css/brandcolors.css',
+        dest: 'assets/css/brandcolors.css'
       }
     }
 

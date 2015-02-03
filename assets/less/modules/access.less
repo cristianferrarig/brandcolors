@@ -1,14 +1,25 @@
-.access {
+.collection {
+  .cf;
   padding: 20px;
-
-  .collection {
-    .cf;
-    margin-top: 20px;
-  }
+  color: #7b8994;
+  position: fixed;
+  right: 0;
+  left: 301px;
+  top: 0;
+  box-shadow: 0 1px fade( #3d464d, 15% );
+  background: fade( white, 95% );
+  z-index: 1;
 
   .current-collection {
     float: left;
     line-height: 40px;
+  }
+
+  .share-collection .genericon {
+    cursor: pointer;
+    font-size: 32px;
+    color: fade( #3d464d, 50% );
+    top: 4px;
   }
 
   .download {

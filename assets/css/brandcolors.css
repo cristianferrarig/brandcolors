@@ -143,9 +143,18 @@ table {
   display: block;
   text-indent: -999em;
 }
+.is-hidden {
+  display: none;
+}
 .font-smoothing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+input,
+button,
+select,
+textarea {
+  font: 16px 'omnes-pro', sans-serif;
 }
 input[type="email"],
 input[type="number"],
@@ -157,10 +166,12 @@ input[type="url"],
 textarea {
   display: block;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border: none;
   border-radius: 2px;
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(61, 70, 77, 0.15), inset 0 1px 3px rgba(61, 70, 77, 0.15);
+  -webkit-transition: 0.25s;
+          transition: 0.25s;
 }
 input[type="email"]::-webkit-input-placeholder,
 input[type="number"]::-webkit-input-placeholder,
@@ -202,6 +213,17 @@ input[type="url"]::placeholder,
 textarea::placeholder {
   color: #b6b6b6;
 }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  box-shadow: inset 0 0 0 1px #007ee5, inset 0 1px 3px rgba(61, 70, 77, 0.15);
+  outline: none;
+}
 input[type="email"],
 input[type="number"],
 input[type="password"],
@@ -227,25 +249,22 @@ video {
 svg {
   fill: currentcolor;
 }
-body,
-input,
-button,
-select,
-textarea {
-  font: 300 16px/20px 'Myriad Pro', sans-serif;
+body {
+  font: 16px/20px 'omnes-pro', sans-serif;
+  color: #3d464d;
 }
 a {
   text-decoration: none;
+  -webkit-transition: 0.25s;
+          transition: 0.25s;
 }
 h1 {
   font-size: 20px;
   line-height: 20px;
-  font-weight: 400;
 }
 h2 {
   font-size: 16px;
   line-height: 20px;
-  font-weight: 300;
 }
 .btn {
   -webkit-appearance: none;
@@ -260,15 +279,21 @@ h2 {
   text-align: center;
   cursor: pointer;
   border: none;
-  background: -webkit-linear-gradient(#03a9f4, #03a9f4);
-  background: linear-gradient(#03a9f4, #03a9f4);
-  color: white;
+  box-shadow: 0 1px 3px rgba(61, 70, 77, 0.15);
+  background: -webkit-linear-gradient(#4caeff, #007ee5);
+  background: linear-gradient(#4caeff, #007ee5);
   padding: 10px 20px;
   border-radius: 2px;
   text-decoration: none;
-  text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
+  color: white;
+  -webkit-transition: 0.25s;
+          transition: 0.25s;
+}
+.btn:hover {
+  background: -webkit-linear-gradient(#5db6ff, #007ee5);
+  background: linear-gradient(#5db6ff, #007ee5);
 }
 .btn:focus {
   outline: none;
@@ -277,13 +302,12 @@ h2 {
   margin-right: 10px;
 }
 .brand {
-  padding: 22px 20px 20px;
-  box-shadow: inset 0 2px rgba(0, 0, 0, 0.1);
+  padding: 21px 20px 20px;
+  box-shadow: 0 1px rgba(61, 70, 77, 0.15);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background: white;
   cursor: pointer;
 }
 .brand:after {
@@ -300,11 +324,27 @@ h2 {
   height: 24px;
   line-height: 24px;
   top: 8px;
-  left: -33px;
+  left: -32px;
   background: white;
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(61, 70, 77, 0.15);
   border-radius: 50%;
   opacity: 0;
+  -webkit-transform: scale(0.75);
+      -ms-transform: scale(0.75);
+          transform: scale(0.75);
+  -webkit-transition: .1s;
+          transition: .1s;
+}
+.brand .brand-check:before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: -webkit-linear-gradient(#4caeff, #007ee5);
+  background: linear-gradient(#4caeff, #007ee5);
 }
 .brand .brand-colors {
   position: relative;
@@ -320,6 +360,11 @@ h2 {
   }
   .brand.is-collected .brand-check {
     opacity: 1;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    -webkit-transition: .1s;
+            transition: .1s;
   }
   .brand .brand-header {
     width: 25%;
@@ -334,7 +379,7 @@ h2 {
   }
 }
 .color.light .color-code {
-  color: black;
+  color: #3d464d;
 }
 .color .color-inner {
   border-radius: 2px;
@@ -374,6 +419,8 @@ h2 {
 .genericon {
   position: relative;
   top: 2px;
+  -webkit-transition: none;
+          transition: none;
 }
 .genericon-large {
   font-size: 32px;
@@ -396,36 +443,47 @@ body {
     padding-left: 300px;
   }
 }
-.access {
+.collection {
   padding: 20px;
+  color: #7b8994;
+  position: fixed;
+  right: 0;
+  left: 301px;
+  top: 0;
+  box-shadow: 0 1px rgba(61, 70, 77, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 1;
 }
-.access .collection {
-  margin-top: 20px;
-}
-.access .collection:after {
+.collection:after {
   display: table;
   clear: both;
   content: '';
 }
-.access .current-collection {
+.collection .current-collection {
   float: left;
   line-height: 40px;
 }
-.access .download {
+.collection .share-collection .genericon {
+  cursor: pointer;
+  font-size: 32px;
+  color: rgba(61, 70, 77, 0.5);
+  top: 4px;
+}
+.collection .download {
   float: right;
   font-size: 0;
 }
-.access .download .btn {
+.collection .download .btn {
   margin-left: 10px;
 }
 @media screen and ( max-width: 1023px ) {
-  .access {
+  .collection {
     display: none;
   }
 }
 .site-header {
   padding: 20px;
-  color: black;
+  color: #3d464d;
 }
 .site-header a {
   color: inherit;
@@ -435,8 +493,13 @@ body {
   width: 46px;
   height: 34px;
 }
+.site-header .description,
+.site-header .search,
+.site-header .share-btns {
+  margin-top: 20px;
+}
 .site-header .description {
-  margin: 20px 0;
+  color: #7b8994;
 }
 .site-header .share-btn {
   display: block;
@@ -466,9 +529,13 @@ body {
 @media screen and ( max-width: 1023px ) {
   .site-header {
     text-align: center;
+    box-shadow: 0 1px rgba(61, 70, 77, 0.15);
   }
   .site-header .logo {
     margin: auto;
+  }
+  .site-header .share-btns {
+    display: none;
   }
 }
 @media screen and ( min-width: 1024px ) {
@@ -478,16 +545,18 @@ body {
     width: 300px;
     margin-left: -300px;
   }
-  .site-header .description {
-    margin: 40px 0;
+  .site-header .description,
+  .site-header .search,
+  .site-header .share-btns {
+    margin-top: 40px;
   }
 }
 @media screen and ( min-width: 1024px ) {
   .main {
+    padding: 80px 0 0 1px;
     float: right;
     width: 100%;
     min-height: 100vh;
-    padding-left: 2px;
-    box-shadow: inset 2px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset 1px 0 rgba(61, 70, 77, 0.15);
   }
 }
