@@ -14,7 +14,7 @@ add_filter( 'show_admin_bar', '__return_false' );
 function bc_assets() {
 
   // Styles
-  wp_enqueue_style( 'genericons',   get_template_directory_uri() . '/library/genericons/genericons/genericons.css' );
+  wp_enqueue_style( 'genericons',   get_template_directory_uri() . '/bower_components/Genericons/genericons.css' );
   wp_enqueue_style( 'brandcolors',  get_template_directory_uri() . '/assets/css/brandcolors.css' );
 
   // Scripts
