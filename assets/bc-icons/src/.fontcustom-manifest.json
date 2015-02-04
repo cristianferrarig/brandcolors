@@ -1,0 +1,61 @@
+{
+  "checksum": {
+    "previous": "0a429c519ef80e2379cb21419048937e382fffaea771e0b942e2eced8caed506",
+    "current": "0a429c519ef80e2379cb21419048937e382fffaea771e0b942e2eced8caed506"
+  },
+  "fonts": [
+    "../webfont/bc-icons.ttf",
+    "../webfont/bc-icons.svg",
+    "../webfont/bc-icons.woff",
+    "../webfont/bc-icons.eot"
+  ],
+  "glyphs": {
+    "download": {
+      "codepoint": 61696,
+      "source": "svg/download.svg"
+    },
+    "facebook": {
+      "codepoint": 61697,
+      "source": "svg/facebook.svg"
+    },
+    "googleplus": {
+      "codepoint": 61699,
+      "source": "svg/googleplus.svg"
+    },
+    "twitter": {
+      "codepoint": 61698,
+      "source": "svg/twitter.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "css_selector": ".bci-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "bc-icons",
+    "force": false,
+    "input": {
+      "templates": "templates",
+      "vectors": "svg"
+    },
+    "no_hash": true,
+    "output": {
+      "css": "../webfont",
+      "fonts": "../webfont",
+      "preview": "../webfont"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "skip_first": false,
+    "templates": [
+      "bc-icons.css"
+    ]
+  },
+  "templates": [
+    "../webfont/bc-icons.css"
+  ]
+}

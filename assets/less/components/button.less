@@ -14,7 +14,8 @@
   cursor: pointer;
   border: none;
   box-shadow: 0 1px 3px fade( #3d464d, 15% );
-  background: linear-gradient( #4caeff, #007ee5 );
+  background: #007aff;
+  background: linear-gradient( lighten( #007aff, 10% ), darken( #007aff, 10% ) );
   padding: 10px 20px;
   border-radius: 2px;
   text-decoration: none;
@@ -24,7 +25,8 @@
   transition: @tr-short;
 
   &:hover {
-    background: linear-gradient( #5db6ff, #007ee5 );
+    background: lighten( #007aff, 5% );
+    background: linear-gradient( lighten( #007aff, 15% ), darken( #007aff, 10% ) );
   }
 
   &:focus {
@@ -34,4 +36,24 @@
 
 .btn-icon {
   margin-right: 10px;
+}
+
+
+// BUTTON GROUP
+
+.btn-group {
+  font-size: 0;
+
+  .btn {
+    border-radius: 0;
+    display: inline-block;
+
+    &:first-child {
+      border-radius: 2px 0 0 2px;
+    }
+
+    &:last-child {
+      border-radius: 0 2px 2px 0;
+    }
+  }
 }

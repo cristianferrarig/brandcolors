@@ -11,21 +11,18 @@
 
   $btns = array(
     array(
-      'label' => 'Tweet',
       'class' => 'twitter',
       'icon'  => 'twitter',
       'url'   => 'http://twitter.com/'
     ),
     array(
-      'label' => 'Like',
       'class' => 'facebook',
-      'icon'  => 'facebook-alt',
+      'icon'  => 'facebook',
       'url'   => 'http://facebook.com/'
     ),
     array(
-      'label' => 'Share',
       'class' => 'googleplus',
-      'icon'  => 'googleplus-alt',
+      'icon'  => 'googleplus',
       'url'   => 'http://plus.google.com/'
     )
   );
@@ -33,11 +30,11 @@
   // Turn the buttons array into an object for cleaner templating
   $btns = json_decode( json_encode( $btns ), false );
 
-  echo '<div class="share-btns">';
+  echo '<div class="share-btns btn-group">';
 
   foreach ( $btns as $btn ) {
 
-    echo "<a href='$btn->url' class='share-btn $btn->class' target='_blank'><i class='genericon genericon-$btn->icon'></i><span class='label'>$btn->label</span></a>";
+    echo "<a href='$btn->url' class='share-btn $btn->class btn' target='_blank'><i class='bci bci-$btn->icon'></i></a>";
 
   }
 
