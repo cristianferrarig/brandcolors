@@ -181,7 +181,7 @@ input[type="tel"]::-webkit-input-placeholder,
 input[type="text"]::-webkit-input-placeholder,
 input[type="url"]::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #b6b6b6;
+  color: #bdc4ca;
 }
 input[type="email"]::-moz-placeholder,
 input[type="number"]::-moz-placeholder,
@@ -191,7 +191,7 @@ input[type="tel"]::-moz-placeholder,
 input[type="text"]::-moz-placeholder,
 input[type="url"]::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #b6b6b6;
+  color: #bdc4ca;
 }
 input[type="email"]:-ms-input-placeholder,
 input[type="number"]:-ms-input-placeholder,
@@ -201,7 +201,7 @@ input[type="tel"]:-ms-input-placeholder,
 input[type="text"]:-ms-input-placeholder,
 input[type="url"]:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #b6b6b6;
+  color: #bdc4ca;
 }
 input[type="email"]::placeholder,
 input[type="number"]::placeholder,
@@ -211,7 +211,7 @@ input[type="tel"]::placeholder,
 input[type="text"]::placeholder,
 input[type="url"]::placeholder,
 textarea::placeholder {
-  color: #b6b6b6;
+  color: #bdc4ca;
 }
 input[type="email"]:focus,
 input[type="number"]:focus,
@@ -283,9 +283,9 @@ h2 {
   cursor: pointer;
   border: none;
   box-shadow: 0 1px 3px rgba(61, 70, 77, 0.15);
-  background: #007aff;
-  background: -webkit-linear-gradient(#3395ff, #0062cc);
-  background: linear-gradient(#3395ff, #0062cc);
+  background: #007ee5;
+  background: -webkit-linear-gradient(#1998ff, #0062b2);
+  background: linear-gradient(#1998ff, #0062b2);
   padding: 10px 20px;
   border-radius: 2px;
   text-decoration: none;
@@ -296,9 +296,9 @@ h2 {
           transition: 0.25s;
 }
 .btn:hover {
-  background: #1a87ff;
-  background: -webkit-linear-gradient(#4da2ff, #0062cc);
-  background: linear-gradient(#4da2ff, #0062cc);
+  background: #008cff;
+  background: -webkit-linear-gradient(#32a3ff, #0062b2);
+  background: linear-gradient(#32a3ff, #0062b2);
 }
 .btn:focus {
   outline: none;
@@ -361,8 +361,9 @@ h2 {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: -webkit-linear-gradient(#4caeff, #007ee5);
-  background: linear-gradient(#4caeff, #007ee5);
+  background: #007ee5;
+  background: -webkit-linear-gradient(#1998ff, #0062b2);
+  background: linear-gradient(#1998ff, #0062b2);
 }
 .brand .brand-colors {
   position: relative;

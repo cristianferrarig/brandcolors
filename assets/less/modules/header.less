@@ -5,7 +5,7 @@
 
 .site-header {
   padding: 20px;
-  color: #3d464d;
+  color: @co-mako;
 
   a {
     color: inherit;
@@ -24,7 +24,7 @@
   }
 
   .description {
-    color: #7b8994;
+    color: @co-slate-gray;
   }
 
   .share-btn {
@@ -32,39 +32,39 @@
     color: white;
 
     &.twitter {
-      background: #55acee;
-      background: linear-gradient( lighten( #55acee, 10% ), darken( #55acee, 10% ) );
+      background: @co-twitter;
+      background: linear-gradient( lighten( @co-twitter, 10% ), darken( @co-twitter, 10% ) );
 
       &:hover {
-        background: lighten( #55acee, 5% );
-        background: linear-gradient( lighten( #55acee, 15% ), darken( #55acee, 10% ) );
+        background: lighten( @co-twitter, 5% );
+        background: linear-gradient( lighten( @co-twitter, 15% ), darken( @co-twitter, 10% ) );
       }
     }
 
     &.facebook {
-      background: #3b5998;
-      background: linear-gradient( lighten( #3b5998, 10% ), darken( #3b5998, 10% ) );
+      background: @co-facebook;
+      background: linear-gradient( lighten( @co-facebook, 10% ), darken( @co-facebook, 10% ) );
 
       &:hover {
-        background: lighten( #3b5998, 5% );
-        background: linear-gradient( lighten( #3b5998, 15% ), darken( #3b5998, 10% ) );
+        background: lighten( @co-facebook, 5% );
+        background: linear-gradient( lighten( @co-facebook, 15% ), darken( @co-facebook, 10% ) );
       }
     }
 
     &.googleplus {
-      background: #dd4b39;
-      background: linear-gradient( lighten( #dd4b39, 10% ), darken( #dd4b39, 10% ) );
+      background: @co-googleplus;
+      background: linear-gradient( lighten( @co-googleplus, 10% ), darken( @co-googleplus, 10% ) );
 
       &:hover {
-        background: lighten( #dd4b39, 5% );
-        background: linear-gradient( lighten( #dd4b39, 15% ), darken( #dd4b39, 10% ) );
+        background: lighten( @co-googleplus, 5% );
+        background: linear-gradient( lighten( @co-googleplus, 15% ), darken( @co-googleplus, 10% ) );
       }
     }
   }
 
   @media @mq-sm-max {
     text-align: center;
-    box-shadow: 0 1px fade( #3d464d, 15% );
+    box-shadow: 0 1px fade( @co-mako, 15% );
 
     .logo {
       margin: auto;

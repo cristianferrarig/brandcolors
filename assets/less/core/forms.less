@@ -28,15 +28,15 @@ textarea {
   padding: 10px 15px;
   border: none;
   border-radius: 2px;
-  box-shadow: inset 0 0 0 1px fade( #3d464d, 15% ), inset 0 1px 3px fade( #3d464d, 15% );
+  box-shadow: inset 0 0 0 1px fade( @co-mako, 15% ), inset 0 1px 3px fade( @co-mako, 15% );
   transition: @tr-short;
 
   &::placeholder {
-    color: #b6b6b6;
+    color: tint( @co-slate-gray, 50% );
   }
 
   &:focus {
-    box-shadow: inset 0 0 0 1px #007ee5, inset 0 1px 3px fade( #3d464d, 15% );
+    box-shadow: inset 0 0 0 1px @co-azure-radiance, inset 0 1px 3px fade( @co-mako, 15% );
     outline: none;
   }
 }
