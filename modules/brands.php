@@ -2,8 +2,6 @@
 
 <?php
 
-locate_template( 'library/phpColors/src/Mexitek/PHPColors/Color.php', true );
-
 $brand_ids = ( isset( $_GET['brands'] ) ? explode( ',', $_GET['brands'] ) : '' );
 
 $brands = bcs_get_brands( $brand_ids );

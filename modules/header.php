@@ -33,9 +33,7 @@
   echo '<div class="share-btns btn-group">';
 
   foreach ( $btns as $btn ) {
-
     echo "<a href='$btn->url' class='share-btn $btn->class btn' target='_blank'><i class='bci bci-$btn->icon'></i></a>";
-
   }
 
   echo '</div>';
