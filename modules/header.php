@@ -30,7 +30,7 @@
   // Turn the buttons array into an object for cleaner templating
   $btns = json_decode( json_encode( $btns ), false );
 
-  echo '<div class="share-btns btn-group">';
+  echo '<div class="share-btns">';
 
   foreach ( $btns as $btn ) {
     echo "<a href='$btn->url' class='share-btn $btn->class btn' target='_blank'><i class='bci bci-$btn->icon'></i></a>";

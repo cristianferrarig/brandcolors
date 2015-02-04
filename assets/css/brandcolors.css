@@ -306,19 +306,6 @@ h2 {
 .btn-icon {
   margin-right: 10px;
 }
-.btn-group {
-  font-size: 0;
-}
-.btn-group .btn {
-  border-radius: 0;
-  display: inline-block;
-}
-.btn-group .btn:first-child {
-  border-radius: 2px 0 0 2px;
-}
-.btn-group .btn:last-child {
-  border-radius: 0 2px 2px 0;
-}
 .brand {
   padding: 21px 20px 20px;
   box-shadow: 0 1px rgba(61, 70, 77, 0.15);
@@ -465,7 +452,7 @@ body {
   clear: both;
   content: '';
 }
-.collection .current-collection {
+.collection .collection-label {
   float: left;
   line-height: 40px;
 }
@@ -502,7 +489,7 @@ body {
   color: #7b8994;
 }
 .site-header .share-btn {
-  width: 33.333333333%;
+  width: 30%;
   color: white;
 }
 .site-header .share-btn.twitter {
@@ -534,6 +521,9 @@ body {
   background: #e15f4f;
   background: -webkit-linear-gradient(#e8867a, #c23321);
   background: linear-gradient(#e8867a, #c23321);
+}
+.site-header .share-btn + .share-btn {
+  margin-left: 5%;
 }
 @media screen and ( max-width: 1023px ) {
   .site-header {

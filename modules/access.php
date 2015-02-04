@@ -1,5 +1,6 @@
 <div class="collection">
-  <div class="current-collection"><span id="collection-count">0 brands</span> in collection <span id="share-collection" class="share-collection is-hidden"><i class="genericon genericon-link"></i></span></div>
+  <div class="collection-label"></div>
+  <a href="#" class="btn"><i class="btn-icon bci bci-link"></i></a>
 
   <div class="download">
     <a href="#" class="btn"><i class="btn-icon bci bci-download"></i>Collection</a>

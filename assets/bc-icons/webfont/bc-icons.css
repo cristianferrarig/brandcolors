@@ -37,4 +37,5 @@
 .bci-download:before { content: "\f100"; }
 .bci-facebook:before { content: "\f101"; }
 .bci-googleplus:before { content: "\f103"; }
+.bci-link:before { content: "\f104"; }
 .bci-twitter:before { content: "\f102"; }

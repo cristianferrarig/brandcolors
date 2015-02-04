@@ -40,6 +40,8 @@ var BrandColors = {
           this.toggleBrand( brands[i] );
         }
       }
+
+      this.updateCollectionLabel();
     },
 
     buildUrlParams: function() {
@@ -68,7 +70,16 @@ var BrandColors = {
       return window.location.origin + '/download/' + this.buildUrlParams();
     },
 
+    updateCollectionLabel: function() {
+      var count   = this.getBrandCount();
+      var message = count + ( count !== 1 ? ' brands ' : ' brand ' ) + 'in collection';
+
+      jQuery( '.collection-label' ).text( message );
+    },
+
     toggleBrand: function( id ) {
+      id = parseInt( id );
+
       jQuery( '#brand-' + id ).toggleClass( 'is-collected' );
 
       if ( BrandColors.utilities.isInArray( id, this.brands ) ) {
@@ -82,6 +93,8 @@ var BrandColors = {
       }
 
       this.brands.sort( BrandColors.utilities.sortNumber );
+
+      this.updateCollectionLabel();
     },
 
   },
