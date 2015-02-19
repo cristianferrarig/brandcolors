@@ -5,20 +5,26 @@
 
 .site-header {
   padding: 20px;
-  color: @co-mine-shaft;
+  color: @mdc-gray-900;
 
   a {
     color: inherit;
   }
 
+  .logo {
+    font-size: 24px;
+  }
+
   .description,
   .search,
-  .share-btns {
+  .share-btns,
+  .credit {
     margin-top: 20px;
   }
 
-  .description {
-    color: @co-boulder;
+  .description,
+  .credit {
+    color: @mdc-gray-600;
   }
 
   .share-btn {
@@ -54,9 +60,21 @@
     }
   }
 
+  .credit {
+    font-size: 14px;
+
+    a {
+      color: @mdc-gray-900;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   @media @mq-sm-max {
     text-align: center;
-    box-shadow: 0 1px @co-alto;
+    box-shadow: 0 1px @mdc-gray-300;
 
     .logo {
       margin: auto;
@@ -75,7 +93,8 @@
 
     .description,
     .search,
-    .share-btns {
+    .share-btns,
+    .credit {
       margin-top: 40px;
     }
   }

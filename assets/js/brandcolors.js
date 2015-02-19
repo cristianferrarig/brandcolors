@@ -77,6 +77,20 @@ var BrandColors = {
       jQuery( '.collection-label' ).text( message );
     },
 
+    toggleCollectionIcon: function() {
+      var $icon = jQuery( '.collection-icon' );
+
+      if ( this.haveBrands() ) {
+        $icon.removeClass( 'is-hidden' );
+      } else {
+        $icon.addClass( 'is-hidden' );
+      }
+    },
+
+    shareCollection: function() {
+      prompt( "Here's the URL to share!", this.buildShareUrl() );
+    },
+
     toggleBrand: function( id ) {
       id = parseInt( id );
 
@@ -95,6 +109,8 @@ var BrandColors = {
       this.brands.sort( BrandColors.utilities.sortNumber );
 
       this.updateCollectionLabel();
+
+      this.toggleCollectionIcon();
     },
 
   },
@@ -132,8 +148,14 @@ jQuery( document ).ready( function( $ ) {
 
   BrandColors.collection.processInitialBrands();
 
+  BrandColors.collection.toggleCollectionIcon();
+
   $( BrandColors.components.searchform.el ).keyup( function() {
     BrandColors.components.searchform.search();
+  } );
+
+  $( '.collection-icon' ).click( function() {
+    BrandColors.collection.shareCollection();
   } );
 
   $( '.brand' ).click( function() {

@@ -6,18 +6,24 @@
 .collection {
   .cf;
   padding: 20px;
-  color: @co-boulder;
+  color: @mdc-gray-600;
   position: fixed;
   right: 0;
   left: 301px;
   top: 0;
-  box-shadow: 0 1px @co-alto;
+  box-shadow: 0 1px @mdc-gray-300;
   background: fade( white, 95% );
   z-index: 1;
 
-  .collection-label {
+  .collection-label,
+  .collection-icon {
     float: left;
     line-height: 40px;
+  }
+
+  .collection-icon {
+    margin-left: 10px;
+    color: @mdc-gray-500;
   }
 
   .download {

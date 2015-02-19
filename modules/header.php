@@ -36,4 +36,10 @@
   echo '</div>';
 
   ?>
+
+  <p class="credit">
+    By <a href="http://twitter.com/galengidman">@galengidman</a>
+    <br>
+    <a href="http://github.com/brandcolors/feedback">Contribute</a>
+  </p>
 </header>
