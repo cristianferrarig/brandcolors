@@ -103,17 +103,21 @@ var BrandColors = {
 
     searchform: {
 
-      search: function( input ) {
-        var term = input.val().toLowerCase();
+      el: '#search',
+
+      search: function() {
+        var term = jQuery( this.el ).val().toLowerCase();
 
         jQuery( '.brand' ).each( function() {
           var $self     = jQuery( this ),
               brandName = $self.data( 'brand-name' ).toLowerCase();
 
-          if ( brandName.indexOf( term ) !== false ) {
-            $self.show();
+              console.log( brandName );
+
+          if ( brandName.indexOf( term ) > -1 ) {
+            $self.removeClass( 'is-hidden' );
           } else {
-            $self.hide();
+            $self.addClass( 'is-hidden' );
           }
         } );
       },
@@ -128,8 +132,8 @@ jQuery( document ).ready( function( $ ) {
 
   BrandColors.collection.processInitialBrands();
 
-  $( '#search-input' ).keyup( function() {
-    BrandColors.components.searchform.search( $( this ) );
+  $( BrandColors.components.searchform.el ).keyup( function() {
+    BrandColors.components.searchform.search();
   } );
 
   $( '.brand' ).click( function() {

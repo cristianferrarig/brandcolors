@@ -6,9 +6,13 @@
 .brand {
   .cf;
   padding: 21px 20px 20px;
-  box-shadow: 0 1px fade( @co-mako, 15% );
+  box-shadow: 0 1px @co-alto;
   user-select: none;
   cursor: pointer;
+
+  &.is-hidden {
+    display: none;
+  }
 
   .brand-header {
     position: relative;
@@ -23,7 +27,7 @@
     top: 8px;
     left: -32px;
     background: white;
-    box-shadow: inset 0 0 0 1px fade( @co-mako, 15% );
+    box-shadow: inset 0 0 0 1px @co-alto;
     border-radius: 50%;
     opacity: 0;
     transform: scale( .75 );
@@ -37,8 +41,7 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: @co-azure-radiance;
-      background: linear-gradient( lighten( @co-azure-radiance, 10% ), darken( @co-azure-radiance, 10% ) );
+      background: @co-azure;
     }
   }
 

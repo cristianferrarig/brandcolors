@@ -1,8 +1,5 @@
 <header id="site-header" class="site-header">
-  <a href="<?php echo home_url( '/' ); ?>" class="logo">
-    <?php locate_template( 'assets/img/logo.svg', 'true' ); ?>
-  </a>
-
+  <h1 class="logo">Brand<strong>Colors</strong></h1>
   <h2 class="description"><?php bloginfo( 'description', 'display' ); ?></h2>
 
   <input id="search" class="search" type="search" placeholder="Search brands &hellip;">
@@ -22,7 +19,7 @@
     ),
     array(
       'class' => 'googleplus',
-      'icon'  => 'googleplus',
+      'icon'  => 'google-plus',
       'url'   => 'http://plus.google.com/'
     )
   );
@@ -33,7 +30,7 @@
   echo '<div class="share-btns">';
 
   foreach ( $btns as $btn ) {
-    echo "<a href='$btn->url' class='share-btn $btn->class btn' target='_blank'><i class='bci bci-$btn->icon'></i></a>";
+    echo "<a href='$btn->url' class='share-btn $btn->class btn' target='_blank'><i class='fa fa-$btn->icon'></i></a>";
   }
 
   echo '</div>';
