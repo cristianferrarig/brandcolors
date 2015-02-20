@@ -25,6 +25,7 @@
         <div class="download-label"><i class="fa fa-download"></i> Collection</div>
 
         <select id="download-collection" class="download-select">
+          <option value="none">Select a format &hellip;</option>
           <option value="ase">ASE (Adobe)</option>
           <option value="css">CSS</option>
           <option value="scss">Sass</option>
@@ -49,6 +50,7 @@
         <div class="download-label"><i class="fa fa-download"></i> All</div>
 
         <select id="download-all" class="download-select">
+          <option value="none">Select a format &hellip;</option>
           <option value="ase">ASE (Adobe)</option>
           <option value="css">CSS</option>
           <option value="scss">Sass</option>

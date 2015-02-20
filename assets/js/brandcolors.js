@@ -174,7 +174,13 @@ jQuery( document ).ready( function( $ ) {
   BrandColors.collection.updateCollection();
 
   $( '#download-collection' ).change( function() {
-    BrandColors.collection.downloadCollection( $( this ).find( 'option:selected' ).val() );
+    var format = $( this ).find( 'option:selected' ).val();
+
+    if ( format === 'none' ) {
+      alert( 'Please select a download format.' );
+    } else {
+      BrandColors.collection.downloadCollection( format );
+    }
   } );
 
   $( '#share-collection' ).click( function() {
@@ -190,7 +196,13 @@ jQuery( document ).ready( function( $ ) {
   } );
 
   $( '#download-all' ).change( function() {
-    BrandColors.collection.downloadAll( $( this ).find( 'option:selected' ).val() );
+    var format = $( this ).find( 'option:selected' ).val();
+
+    if ( format === 'none' ) {
+      alert( 'Please select a download format.' );
+    } else {
+      BrandColors.collection.downloadAll( format );
+    }
   } );
 
   $( '.brand' ).click( function() {
