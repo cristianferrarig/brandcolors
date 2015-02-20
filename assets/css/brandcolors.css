@@ -170,8 +170,8 @@ textarea {
   border: none;
   border-radius: 2px;
   box-shadow: inset 0 0 0 1px #e0e0e0, inset 0 1px 3px #e0e0e0;
-  -webkit-transition: 0.25s;
-          transition: 0.25s;
+  -webkit-transition: .15s;
+          transition: .15s;
 }
 input[type="email"]::-webkit-input-placeholder,
 input[type="number"]::-webkit-input-placeholder,
@@ -260,8 +260,8 @@ body {
 }
 a {
   text-decoration: none;
-  -webkit-transition: 0.25s;
-          transition: 0.25s;
+  -webkit-transition: .15s;
+          transition: .15s;
 }
 h1 {
   font-size: 20px;
@@ -276,9 +276,6 @@ strong {
 }
 em {
   font-style: italic;
-}
-.bci {
-  top: 2px;
 }
 .btn {
   -webkit-appearance: none;
@@ -300,8 +297,8 @@ em {
   font-weight: bold;
   font-size: 14px;
   color: white;
-  -webkit-transition: 0.25s;
-          transition: 0.25s;
+  -webkit-transition: .15s;
+          transition: .15s;
 }
 .btn:hover {
   background: #42a5f5;
@@ -332,7 +329,7 @@ em {
 .brand .brand-header {
   position: relative;
 }
-.brand .brand-check {
+.brand .brand-dot {
   position: absolute;
   width: 24px;
   height: 24px;
@@ -349,7 +346,7 @@ em {
   -webkit-transition: .1s;
           transition: .1s;
 }
-.brand .brand-check:before {
+.brand .brand-dot:before {
   content: '';
   position: absolute;
   top: 4px;
@@ -371,7 +368,7 @@ em {
   .brand {
     padding: 22px 10px 20px 20px;
   }
-  .brand.is-collected .brand-check {
+  .brand.is-collected .brand-dot {
     opacity: 1;
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
@@ -443,40 +440,76 @@ body {
     padding-left: 300px;
   }
 }
-.collection {
+.access {
   padding: 20px;
   color: #757575;
   position: fixed;
   right: 0;
   left: 301px;
   top: 0;
+  text-align: center;
   box-shadow: 0 1px #e0e0e0;
   background: rgba(255, 255, 255, 0.95);
-  z-index: 1;
+  z-index: 10;
 }
-.collection:after {
+.access:after {
   display: table;
   clear: both;
   content: '';
 }
-.collection .collection-label,
-.collection .collection-icon {
+.access .collection,
+.access .collection-label,
+.access .collection-icon {
   float: left;
+}
+.access .collection-label,
+.access .collection-icon {
   line-height: 40px;
 }
-.collection .collection-icon {
-  margin-left: 10px;
-  color: #9e9e9e;
+.access .collection-icon {
+  width: 40px;
+  color: inherit;
 }
-.collection .download {
+.access .collection-icon:hover {
+  color: #212121;
+}
+.access .tools {
   float: right;
-  font-size: 0;
+  margin: -20px -20px -20px 0;
 }
-.collection .download .btn {
-  margin-left: 10px;
+.access .search,
+.access .download {
+  float: left;
+}
+.access .search {
+  display: none;
+}
+.access .download {
+  position: relative;
+  height: 80px;
+  box-shadow: inset 1px 0 #e0e0e0;
+}
+.access .download:hover .download-label {
+  color: #212121;
+}
+.access .download-label {
+  line-height: 80px;
+  padding: 0 40px;
+  -webkit-transition: .15s;
+          transition: .15s;
+}
+.access .download-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
 }
 @media screen and ( max-width: 1023px ) {
-  .collection {
+  .access {
     display: none;
   }
 }
@@ -491,14 +524,14 @@ body {
   font-size: 24px;
 }
 .site-header .description,
-.site-header .search,
-.site-header .share-btns,
-.site-header .credit {
+.site-header .share-btns {
   margin-top: 20px;
 }
-.site-header .description,
-.site-header .credit {
+.site-header .description {
   color: #757575;
+}
+.site-header .share-btns {
+  font-size: 0;
 }
 .site-header .share-btn {
   width: 30%;
@@ -516,31 +549,19 @@ body {
 .site-header .share-btn.facebook:hover {
   background: #4264aa;
 }
-.site-header .share-btn.googleplus {
+.site-header .share-btn.google-plus {
   background: #dd4b39;
 }
-.site-header .share-btn.googleplus:hover {
+.site-header .share-btn.google-plus:hover {
   background: #e15f4f;
 }
 .site-header .share-btn + .share-btn {
   margin-left: 5%;
 }
-.site-header .credit {
-  font-size: 14px;
-}
-.site-header .credit a {
-  color: #212121;
-}
-.site-header .credit a:hover {
-  text-decoration: underline;
-}
 @media screen and ( max-width: 1023px ) {
   .site-header {
     text-align: center;
     box-shadow: 0 1px #e0e0e0;
-  }
-  .site-header .logo {
-    margin: auto;
   }
   .site-header .share-btns {
     display: none;
@@ -554,14 +575,12 @@ body {
     margin-left: -300px;
   }
   .site-header .description,
-  .site-header .search,
-  .site-header .share-btns,
-  .site-header .credit {
+  .site-header .share-btns {
     margin-top: 40px;
   }
 }
 @media screen and ( min-width: 1024px ) {
-  .main {
+  .brands {
     padding: 80px 0 0 1px;
     float: right;
     width: 100%;

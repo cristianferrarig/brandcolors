@@ -3,7 +3,7 @@
 //
 
 
-.collection {
+.access {
   .cf;
   padding: 20px;
   color: @mdc-gray-600;
@@ -11,28 +11,70 @@
   right: 0;
   left: 301px;
   top: 0;
+  text-align: center;
   box-shadow: 0 1px @mdc-gray-300;
   background: fade( white, 95% );
-  z-index: 1;
+  z-index: @zi-access;
 
+  .collection,
   .collection-label,
   .collection-icon {
     float: left;
+  }
+
+  .collection-label,
+  .collection-icon {
     line-height: 40px;
   }
 
   .collection-icon {
-    margin-left: 10px;
-    color: @mdc-gray-500;
+    width: 40px;
+    color: inherit;
+
+    &:hover {
+      color: @mdc-gray-900;
+    }
+  }
+
+  .tools {
+    float: right;
+    margin: -20px -20px -20px 0;
+  }
+
+  .search,
+  .download {
+    float: left;
+  }
+
+  .search {
+    display: none;
   }
 
   .download {
-    float: right;
-    font-size: 0;
+    position: relative;
+    height: 80px;
+    box-shadow: inset 1px 0 @mdc-gray-300;
 
-    .btn {
-      margin-left: 10px;
+    &:hover .download-label {
+      color: @mdc-gray-900;
     }
+  }
+
+  .download-label {
+    line-height: 80px;
+    padding: 0 40px;
+    transition: .15s;
+  }
+
+  .download-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    cursor: pointer;
   }
 
   @media @mq-sm-max {

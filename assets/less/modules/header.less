@@ -16,15 +16,16 @@
   }
 
   .description,
-  .search,
-  .share-btns,
-  .credit {
+  .share-btns {
     margin-top: 20px;
   }
 
-  .description,
-  .credit {
+  .description {
     color: @mdc-gray-600;
+  }
+
+  .share-btns {
+    font-size: 0;
   }
 
   .share-btn {
@@ -32,26 +33,26 @@
     color: white;
 
     &.twitter {
-      background: @co-twitter;
+      background: @bc-twitter;
 
       &:hover {
-        background: lighten( @co-twitter, 5% );
+        background: lighten( @bc-twitter, 5% );
       }
     }
 
     &.facebook {
-      background: @co-facebook;
+      background: @bc-facebook;
 
       &:hover {
-        background: lighten( @co-facebook, 5% );
+        background: lighten( @bc-facebook, 5% );
       }
     }
 
-    &.googleplus {
-      background: @co-googleplus;
+    &.google-plus {
+      background: @bc-google-plus;
 
       &:hover {
-        background: lighten( @co-googleplus, 5% );
+        background: lighten( @bc-google-plus, 5% );
       }
     }
 
@@ -60,25 +61,9 @@
     }
   }
 
-  .credit {
-    font-size: 14px;
-
-    a {
-      color: @mdc-gray-900;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
   @media @mq-sm-max {
     text-align: center;
     box-shadow: 0 1px @mdc-gray-300;
-
-    .logo {
-      margin: auto;
-    }
 
     .share-btns {
       display: none;
@@ -92,9 +77,7 @@
     margin-left: -300px;
 
     .description,
-    .search,
-    .share-btns,
-    .credit {
+    .share-btns {
       margin-top: 40px;
     }
   }
