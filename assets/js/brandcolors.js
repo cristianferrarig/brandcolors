@@ -140,6 +140,20 @@ var BrandColors = {
 
     },
 
+    color: {
+
+      getLuminosity: function( hex ) {
+        var color = Color( '#' + hex );
+
+        if ( color.luminosity() > .7 ) {
+          return 'light'
+        }
+
+        return 'dark';
+      },
+
+    },
+
   },
 
 };
@@ -150,6 +164,10 @@ jQuery( document ).ready( function( $ ) {
 
   BrandColors.collection.toggleCollectionIcon();
 
+  $( '.color-inner' ).each( function() {
+    $( this ).addClass( BrandColors.components.color.getLuminosity( $( this ).data( 'color-hex' ) ) );
+  } );
+
   $( BrandColors.components.searchform.el ).keyup( function() {
     BrandColors.components.searchform.search();
   } );
@@ -159,14 +177,11 @@ jQuery( document ).ready( function( $ ) {
   } );
 
   $( '.brand' ).click( function() {
-    var id = $( this ).data( 'brand-id' );
-
-    BrandColors.collection.toggleBrand( id );
+    BrandColors.collection.toggleBrand( $( this ).data( 'brand-id' ) );
   } );
 
-  $( '.color-inner' ).click( function() {
-    console.log( 'testing' );
-    $( this ).find( '.color-code' ).select();
+  $( '.color-code' ).click( function() {
+    $( this ).select();
   } );
 
   $( '.brand .color-code' ).click( function( ev ) {

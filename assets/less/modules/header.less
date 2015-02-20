@@ -7,17 +7,20 @@
   padding: 20px;
   color: @mdc-gray-900;
 
+  > * + * {
+    margin-top: 20px;
+  }
+
   a {
     color: inherit;
+
+    &:hover {
+      color: @mdc-blue-500;
+    }
   }
 
   .logo {
     font-size: 24px;
-  }
-
-  .description,
-  .share-btns {
-    margin-top: 20px;
   }
 
   .description {
@@ -76,8 +79,7 @@
     width: 300px;
     margin-left: -300px;
 
-    .description,
-    .share-btns {
+    > * + * {
       margin-top: 40px;
     }
   }

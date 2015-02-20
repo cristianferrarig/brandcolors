@@ -15,11 +15,12 @@ function bc_assets() {
 
   // Styles
   wp_enqueue_style( 'brandcolors-fonts', '//fonts.googleapis.com/css?family=Roboto:400,700' );
-  wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
-  wp_enqueue_style( 'brandcolors', get_template_directory_uri() . '/assets/css/brandcolors.css' );
+  wp_enqueue_style( 'fontawesome',       '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+  wp_enqueue_style( 'brandcolors',       get_template_directory_uri() . '/assets/css/brandcolors.css' );
 
   // Scripts
-  wp_enqueue_script( 'brandcolors', get_template_directory_uri() . '/assets/js/brandcolors.js', array( 'jquery' ) );
+  wp_enqueue_script( 'color',       get_template_directory_uri() . '/assets/js/color.js' );
+  wp_enqueue_script( 'brandcolors', get_template_directory_uri() . '/assets/js/brandcolors.js', array( 'jquery', 'color' ) );
 
 }
 add_action( 'wp_enqueue_scripts', 'bc_assets' );

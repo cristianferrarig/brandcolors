@@ -7,8 +7,10 @@
 
 <body>
   <header class="site-header">
-    <h1 class="logo">Brand<strong>Colors</strong></h1>
+    <h1 class="logo"><a href="<?php echo home_url( '/' ); ?>">Brand<strong>Colors</strong></a></h1>
     <h2 class="description"><?php bloginfo( 'description', 'display' ); ?></h2>
+
+    <p class="contribute"><a href="http://github.com/brandcolors/feedback" target="_blank"><i class="fa fa-plus"></i> Contribute</a></p>
 
     <div class="share-btns">
       <a href="#" class="share-btn twitter btn" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -24,7 +26,10 @@
     </div>
 
     <div class="tools">
-      <input id="search" class="search" type="search" placeholder="Search brands &hellip;">
+      <div class="search">
+        <i class="search-icon fa fa-search"></i>
+        <input id="search" class="search-input" type="search" placeholder="Search brands &hellip;" autofocus>
+      </div>
 
       <div class="download">
         <div class="download-label"><i class="fa fa-download"></i> All</div>
@@ -52,12 +57,10 @@
     </div>
   </div>
 
-  <section class="brands">
+  <div class="brands">
     <?php
 
-    $brand_ids = ( isset( $_GET['brands'] ) ? explode( ',', $_GET['brands'] ) : '' );
-
-    $brands = bcs_get_brands( $brand_ids );
+    $brands = bcs_get_brands( ( isset( $_GET['brands'] ) ? explode( ',', $_GET['brands'] ) : null ) );
 
     if ( $brands->have_posts() ) {
       while ( $brands->have_posts() ) {
@@ -84,11 +87,12 @@
             </div>
           </article>
         <?php
+
       }
     }
 
     ?>
-  </section>
+  </div>
 
   <?php wp_footer(); ?>
 </body>

@@ -5,13 +5,14 @@
 
 .access {
   .cf;
-  padding: 20px;
+  padding: 0 20px;
   color: @mdc-gray-600;
   position: fixed;
   right: 0;
   left: 301px;
   top: 0;
   text-align: center;
+  line-height: 60px;
   box-shadow: 0 1px @mdc-gray-300;
   background: fade( white, 95% );
   z-index: @zi-access;
@@ -20,11 +21,6 @@
   .collection-label,
   .collection-icon {
     float: left;
-  }
-
-  .collection-label,
-  .collection-icon {
-    line-height: 40px;
   }
 
   .collection-icon {
@@ -38,32 +34,37 @@
 
   .tools {
     float: right;
-    margin: -20px -20px -20px 0;
+    margin-right: -20px;
   }
 
   .search,
   .download {
-    float: left;
-  }
-
-  .search {
-    display: none;
-  }
-
-  .download {
     position: relative;
-    height: 80px;
+    float: left;
+    padding-left: 1px;
     box-shadow: inset 1px 0 @mdc-gray-300;
+  }
 
-    &:hover .download-label {
-      color: @mdc-gray-900;
-    }
+  .search-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 21px;
+    left: 20px;
+  }
+
+  .search-input {
+    padding: 20px 20px 20px 50px;
+    height: 60px;
+  }
+
+  .download:hover .download-label {
+    color: @mdc-gray-900;
   }
 
   .download-label {
-    line-height: 80px;
     padding: 0 40px;
-    transition: .15s;
+    transition: .1s;
   }
 
   .download-select {
