@@ -14,9 +14,9 @@ add_filter( 'show_admin_bar', '__return_false' );
 function bc_assets() {
 
   // Styles
-  wp_enqueue_style( 'brandcolors-fonts', '//fonts.googleapis.com/css?family=Roboto:400,700' );
-  wp_enqueue_style( 'fontawesome',       '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
-  wp_enqueue_style( 'brandcolors',       get_template_directory_uri() . '/assets/css/brandcolors.css' );
+  wp_enqueue_style( 'typekit',     '//use.typekit.net/oif4irt.js' );
+  wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+  wp_enqueue_style( 'brandcolors', get_template_directory_uri() . '/assets/css/brandcolors.css' );
 
   // Scripts
   wp_enqueue_script( 'color',       get_template_directory_uri() . '/assets/js/color.js' );
