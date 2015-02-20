@@ -20,12 +20,26 @@
   </header>
 
   <div class="access">
-    <div class="collection">
+    <div class="collection-tools">
+      <div class="download">
+        <div class="download-label"><i class="fa fa-download"></i> Collection</div>
+
+        <select id="download-collection" class="download-select">
+          <option value="ase">ASE (Adobe)</option>
+          <option value="css">CSS</option>
+          <option value="scss">Sass</option>
+          <option value="less">LESS</option>
+          <option value="styl">Stylus</option>
+        </select>
+      </div>
+
+      <a href="#" id="share-collection" class="collection-icon"><i class="fa fa-link"></i></a>
+      <a href="#" id="clear-collection" class="collection-icon"><i class="fa fa-times"></i></a>
+
       <div class="collection-label"></div>
-      <a href="#" class="collection-icon"><i class="fa fa-link"></i></a>
     </div>
 
-    <div class="tools">
+    <div class="other-tools">
       <div class="search">
         <i class="search-icon fa fa-search"></i>
         <input id="search" class="search-input" type="search" placeholder="Search brands &hellip;" autofocus>
@@ -35,23 +49,11 @@
         <div class="download-label"><i class="fa fa-download"></i> All</div>
 
         <select id="download-all" class="download-select">
-          <option value="ase">ASE (like ACO)</option>
+          <option value="ase">ASE (Adobe)</option>
           <option value="css">CSS</option>
-          <option value="sass">Sass</option>
+          <option value="scss">Sass</option>
           <option value="less">LESS</option>
-          <option value="stylus">Stylus</option>
-        </select>
-      </div>
-
-      <div class="download">
-        <div class="download-label"><i class="fa fa-download"></i> Collection</div>
-
-        <select id="download-collection" class="download-select">
-          <option value="ase">ASE (like ACO)</option>
-          <option value="css">CSS</option>
-          <option value="sass">Sass</option>
-          <option value="less">LESS</option>
-          <option value="stylus">Stylus</option>
+          <option value="styl">Stylus</option>
         </select>
       </div>
     </div>

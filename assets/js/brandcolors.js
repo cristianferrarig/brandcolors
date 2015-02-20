@@ -41,7 +41,7 @@ var BrandColors = {
         }
       }
 
-      this.updateCollectionLabel();
+      this.updateCollection();
     },
 
     buildUrlParams: function() {
@@ -70,25 +70,38 @@ var BrandColors = {
       return window.location.origin + '/download/' + this.buildUrlParams();
     },
 
-    updateCollectionLabel: function() {
+    downloadAll: function( format ) {
+      window.location = window.location.origin + '/download/?format=' + format;
+    },
+
+    updateCollection: function() {
+      var el      = jQuery( '.collection-tools' );
       var count   = this.getBrandCount();
       var message = count + ( count !== 1 ? ' brands ' : ' brand ' ) + 'in collection';
+
+      if ( this.haveBrands() ) {
+        el.removeClass( 'is-disabled' );
+      } else {
+        el.addClass( 'is-disabled' );
+      }
 
       jQuery( '.collection-label' ).text( message );
     },
 
-    toggleCollectionIcon: function() {
-      var $icon = jQuery( '.collection-icon' );
-
-      if ( this.haveBrands() ) {
-        $icon.removeClass( 'is-hidden' );
-      } else {
-        $icon.addClass( 'is-hidden' );
-      }
+    downloadCollection: function( format ) {
+      window.location = window.location.origin + '/download/' + this.buildUrlParams() + '&format=' + format;
     },
 
     shareCollection: function() {
       prompt( "Here's the URL to share!", this.buildShareUrl() );
+    },
+
+    clearCollection: function() {
+      this.brands = [];
+
+      jQuery( '.brand' ).removeClass( 'is-collected' );
+
+      this.updateCollection();
     },
 
     toggleBrand: function( id ) {
@@ -108,9 +121,7 @@ var BrandColors = {
 
       this.brands.sort( BrandColors.utilities.sortNumber );
 
-      this.updateCollectionLabel();
-
-      this.toggleCollectionIcon();
+      this.updateCollection();
     },
 
   },
@@ -127,8 +138,6 @@ var BrandColors = {
         jQuery( '.brand' ).each( function() {
           var $self     = jQuery( this ),
               brandName = $self.data( 'brand-name' ).toLowerCase();
-
-              console.log( brandName );
 
           if ( brandName.indexOf( term ) > -1 ) {
             $self.removeClass( 'is-hidden' );
@@ -162,22 +171,34 @@ jQuery( document ).ready( function( $ ) {
 
   BrandColors.collection.processInitialBrands();
 
-  BrandColors.collection.toggleCollectionIcon();
+  BrandColors.collection.updateCollection();
 
-  $( '.color-inner' ).each( function() {
-    $( this ).addClass( BrandColors.components.color.getLuminosity( $( this ).data( 'color-hex' ) ) );
+  $( '#download-collection' ).change( function() {
+    BrandColors.collection.downloadCollection( $( this ).find( 'option:selected' ).val() );
+  } );
+
+  $( '#share-collection' ).click( function() {
+    BrandColors.collection.shareCollection();
+  } );
+
+  $( '#clear-collection' ).click( function() {
+    BrandColors.collection.clearCollection();
   } );
 
   $( BrandColors.components.searchform.el ).keyup( function() {
     BrandColors.components.searchform.search();
   } );
 
-  $( '.collection-icon' ).click( function() {
-    BrandColors.collection.shareCollection();
+  $( '#download-all' ).change( function() {
+    BrandColors.collection.downloadAll( $( this ).find( 'option:selected' ).val() );
   } );
 
   $( '.brand' ).click( function() {
     BrandColors.collection.toggleBrand( $( this ).data( 'brand-id' ) );
+  } );
+
+  $( '.color-inner' ).each( function() {
+    $( this ).addClass( BrandColors.components.color.getLuminosity( $( this ).data( 'color-hex' ) ) );
   } );
 
   $( '.color-code' ).click( function() {

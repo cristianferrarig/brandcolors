@@ -134,6 +134,11 @@ table {
 .is-hidden {
   display: none;
 }
+.is-disabled {
+  opacity: .5;
+  cursor: default;
+  pointer-events: none;
+}
 .font-smoothing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -413,7 +418,6 @@ body {
   }
 }
 .access {
-  padding: 0 20px;
   color: #757575;
   position: fixed;
   right: 0;
@@ -424,55 +428,43 @@ body {
   box-shadow: 0 1px #e0e0e0;
   background: rgba(255, 255, 255, 0.95);
   z-index: 10;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .access:after {
   display: table;
   clear: both;
   content: '';
 }
-.access .collection,
-.access .collection-label,
-.access .collection-icon {
+.access .collection-tools {
   float: left;
 }
-.access .collection-icon {
-  width: 40px;
-  color: inherit;
-}
-.access .collection-icon:hover {
-  color: #212121;
-}
-.access .tools {
+.access .other-tools {
   float: right;
-  margin-right: -20px;
 }
-.access .search,
+.access .collection-tools > *,
+.access .other-tools > * {
+  float: left;
+}
+.access .collection-tools > * + *,
+.access .other-tools > * + * {
+  margin-left: 1px;
+  box-shadow: -1px 0 #e0e0e0;
+}
 .access .download {
   position: relative;
-  float: left;
-  padding-left: 1px;
-  box-shadow: inset 1px 0 #e0e0e0;
-}
-.access .search-icon {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 21px;
-  left: 20px;
-}
-.access .search-input {
-  padding: 20px 20px 20px 50px;
-  height: 60px;
 }
 .access .download:hover .download-label {
   color: #212121;
 }
-.access .download-label {
+.access .download .download-label {
   padding: 0 40px;
   -webkit-transition: .1s;
           transition: .1s;
 }
-.access .download-select {
+.access .download .download-select {
   position: absolute;
   top: 0;
   left: 0;
@@ -481,6 +473,32 @@ body {
   border: none;
   opacity: 0;
   cursor: pointer;
+}
+.access .collection-icon {
+  width: 60px;
+  color: inherit;
+}
+.access .collection-icon:hover {
+  color: #212121;
+}
+.access .collection-label {
+  padding-left: 20px;
+}
+.access .search {
+  position: relative;
+}
+.access .search .search-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  pointer-events: none;
+}
+.access .search .search-input {
+  padding: 20px 20px 20px 50px;
+  height: 60px;
+  background: transparent;
 }
 @media screen and ( max-width: 1023px ) {
   .access {
@@ -499,6 +517,10 @@ body {
 .site-header {
   padding: 20px;
   color: #212121;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .site-header > * + * {
   margin-top: 20px;
@@ -515,12 +537,15 @@ body {
 .site-header .description {
   color: #757575;
 }
+.site-header .contribute {
+  font-weight: bold;
+}
 .site-header .share-btns {
   font-size: 0;
 }
 .site-header .share-btn {
   width: 30%;
-  color: white;
+  color: white !important;
 }
 .site-header .share-btn.twitter {
   background: #55acee;
