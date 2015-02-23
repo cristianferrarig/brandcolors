@@ -13,9 +13,9 @@
     <p class="contribute"><a href="http://github.com/brandcolors/feedback" target="_blank"><i class="fa fa-plus"></i> Contribute</a></p>
 
     <div class="share-btns">
-      <a href="#" class="share-btn twitter btn" target="_blank"><i class="fa fa-twitter"></i></a>
-      <a href="#" class="share-btn facebook btn" target="_blank"><i class="fa fa-facebook"></i></a>
-      <a href="#" class="share-btn google-plus btn" target="_blank"><i class="fa fa-google-plus"></i></a>
+      <a href="//twitter.com/home?status=Check%20out%20%40brandcolorsnet,%20official%20color%20codes%20for%20the%20world's%20biggest%20brands.%0A%0Ahttp://brandcolors.net/" class="share-btn twitter btn" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="//www.facebook.com/sharer/sharer.php?u=http://brandcolors.net/" class="share-btn facebook btn" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="//plus.google.com/share?url=http://brandcolors.net/" class="share-btn google-plus btn" target="_blank"><i class="fa fa-google-plus"></i></a>
     </div>
   </header>
 
