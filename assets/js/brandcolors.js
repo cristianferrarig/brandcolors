@@ -213,8 +213,8 @@ jQuery( document ).ready( function( $ ) {
     BrandColors.collection.toggleBrand( $( this ).data( 'brand-id' ) );
   } );
 
-  $( '.color-inner' ).each( function() {
-    $( this ).addClass( BrandColors.components.color.getLuminosity( $( this ).data( 'color-hex' ) ) );
+  $( '.color' ).each( function() {
+    $( this ).find( '.color-inner' ).addClass( BrandColors.components.color.getLuminosity( $( this ).data( 'color-hex' ) ) );
   } );
 
   $( '.color-code' ).click( function() {
