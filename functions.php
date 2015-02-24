@@ -21,6 +21,7 @@ function bc_assets() {
   wp_enqueue_script( 'typekit',     '//use.typekit.net/oif4irt.js' );
   wp_enqueue_script( 'color',       get_template_directory_uri() . '/assets/js/color.js' );
   wp_enqueue_script( 'brandcolors', get_template_directory_uri() . '/assets/js/brandcolors.js', array( 'jquery', 'color' ) );
+  wp_enqueue_script( 'tracking',    get_template_directory_uri() . '/assets/js/tracking.js', array( 'jquery' ) );
 
 }
 add_action( 'wp_enqueue_scripts', 'bc_assets' );

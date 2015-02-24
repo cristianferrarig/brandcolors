@@ -84,13 +84,23 @@
             </header>
 
             <div class="brand-colors cf">
-              <?php foreach ( $colors as $color ) : ?>
-                <div class="color" style="width: <?php echo 100 / $color_count; ?>%;">
-                  <div class="color-inner" style="background-color: #<?php echo $color; ?>" data-color-hex="<?php echo $color; ?>">
+              <?php
+
+              $i = 1;
+              foreach ( $colors as $color ) :
+
+              ?>
+                <div class="color" data-color-hex="<?php echo $color; ?>" data-color-label="<?php the_title_attribute(); echo " $i"; ?>" style="width: <?php echo 100 / $color_count; ?>%;">
+                  <div class="color-inner" style="background-color: #<?php echo $color; ?>">
                     <input type="text" class="color-code" size="6" value="<?php echo $color; ?>" readonly>
                   </div>
                 </div>
-              <?php endforeach; ?>
+              <?php
+
+              $i++;
+              endforeach;
+
+              ?>
             </div>
           </article>
         <?php
