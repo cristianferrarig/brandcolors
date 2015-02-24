@@ -1,7 +1,7 @@
 jQuery( document ).ready( function( $ ) {
 
   $( '#search' ).on( 'blur', function() {
-    var val = $( this ).val().trim();
+    var val = $( this ).val().trim().toLowerCase();
 
     if ( val ) {
       _gaq.push( [ '_trackEvent', 'Search', 'Searched', val ] );
