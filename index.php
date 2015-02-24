@@ -17,6 +17,8 @@
       <a href="//www.facebook.com/sharer/sharer.php?u=http://brandcolors.net/" class="share-btn facebook btn" target="_blank"><i class="fa fa-facebook"></i></a>
       <a href="//plus.google.com/share?url=http://brandcolors.net/" class="share-btn google-plus btn" target="_blank"><i class="fa fa-google-plus"></i></a>
     </div>
+
+    <script async src="//cdn.carbonads.com/carbon.js?zoneid=1696&serve=CVYD42T&placement=brandcolorsnet" id="_carbonads_js"></script>
   </header>
 
   <div class="access">
