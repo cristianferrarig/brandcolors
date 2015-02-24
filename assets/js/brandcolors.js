@@ -183,12 +183,16 @@ jQuery( document ).ready( function( $ ) {
     }
   } );
 
-  $( '#share-collection' ).click( function() {
+  $( '#share-collection' ).click( function( ev ) {
     BrandColors.collection.shareCollection();
+
+    ev.preventDefault();
   } );
 
-  $( '#clear-collection' ).click( function() {
+  $( '#clear-collection' ).click( function( ev ) {
     BrandColors.collection.clearCollection();
+
+    ev.preventDefault();
   } );
 
   $( BrandColors.components.searchform.el ).keyup( function() {
