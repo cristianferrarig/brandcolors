@@ -206,7 +206,7 @@ $brandcolors: (
         $brand-color-type: type-of($brand-color);
 
         @if $brand-color-type != color {
-          @error "The color number `#{$number}` de `#{$brand-name}` is not a valid color: `#{$brand-color}`";
+          @error "The color number `#{$number}` of `#{$brand-name}` is not a valid color: `#{$brand-color}`";
         }
       }
       @else {
