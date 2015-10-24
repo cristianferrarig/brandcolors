@@ -14,6 +14,19 @@ A Sass module containing a function that return a especific color found on [Bran
     .twitter-button {
         background: brandcolor(twitter);
     }
+
+    .amazon-link {
+        color: brandcolor(amazon,2);
+    }
+    ```
+    You can write the names with spaces, dash or underscore.
+    ```
+    .class {
+        color: brandcolor("angie's list");
+        color: brandcolor(angies list);
+        color: brandcolor(angies-list);
+        color: brandcolor(angies_list);
+    }
     ```
 
 ### Credits

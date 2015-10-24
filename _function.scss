@@ -1,0 +1,33 @@
+@function brandcolor($name,$number:1) {
+  $string-name: to-string($name);
+  $string-name: str-replace($string-name," ","-");
+  $string-name: str-replace($string-name,"_","-");
+
+  $brand-key:   $string-name;
+  $brand-name:  str-replace($brand-key,"-"," ");
+  $brand-color: ();
+
+  @if map-has-key($brandcolors, $brand-key) {
+    $brand-color:        map-get($brandcolors, $brand-key);
+    $brand-color-type:   type-of($brand-color);
+    $brand-color-length: length($brand-color);
+
+    @if $brand-color-length < $number {
+      $color-text: if(($brand-color-length),"color","colors");
+      @error "`#{$brand-name}` has only #{$brand-color-length} #{$color-text} and you're asking for number `#{$number}`";
+    }
+    @else if $brand-color-type == list {
+      $brand-color: nth($brand-color, $number);
+    }
+  }
+  @else {
+    @error "The brand you are looking for does not exist or is misspelled: '#{$string-name}'";
+  }
+
+  $brand-color-type: type-of($brand-color);
+  @if $brand-color-type != color {
+    @error "The color number `#{$number}` of `#{$brand-name}` is not a valid color: `#{$brand-color}`";
+  }
+
+  @return $brand-color;
+}
