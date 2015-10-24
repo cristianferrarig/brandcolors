@@ -168,7 +168,6 @@ $brandcolors: (
   zendesk:           (#78a300, #f1f1f1, #444444),
   zerply:            #9dbc7a,
   zopim:             #ff9d3b,
-
 );
 
 
@@ -186,53 +185,34 @@ $brandcolors: (
 
 
 @function brandcolor($name,$number:1) {
-  $string-name:       to-string($name);
-  $remove-spaces:     str-replace($string-name," ","-");
-  $remove-underscore: str-replace($remove-spaces,"_","-");
+  $string-name: to-string($name);
+  $string-name: str-replace($string-name," ","-");
+  $string-name: str-replace($string-name,"_","-");
 
-  $brand-key:    $remove-underscore;
-  $brand-name:   str-replace($brand-key,"-"," ");
-  $brand-color:  ();
+  $brand-key:   $string-name;
+  $brand-name:  str-replace($brand-key,"-"," ");
+  $brand-color: ();
 
   @if map-has-key($brandcolors, $brand-key) {
-    $brand-color:      map-get($brandcolors, $brand-key);
-    $brand-color-type: type-of($brand-color);
+    $brand-color:        map-get($brandcolors, $brand-key);
+    $brand-color-type:   type-of($brand-color);
+    $brand-color-length: length($brand-color);
 
-    @if $brand-color-type == list {
-      $brand-color-count: length($brand-color);
-
-      @if $brand-colors-count >= $number {
-        $brand-color: nth($brand-colors, $number);
-        $brand-color-type: type-of($brand-color);
-
-        @if $brand-color-type != color {
-          @error "The color number `#{$number}` of `#{$brand-name}` is not a valid color: `#{$brand-color}`";
-        }
-      }
-      @else {
-        @error "`#{$brand-name}` has only #{$brand-color-count} colors and you're asking for number `#{$number}`";
-      }
+    @if $brand-color-length < $number {
+      @error "`#{$brand-name}` has only #{$brand-color-length} colors and you're asking for number `#{$number}`";
     }
-
-    @else if $brand-color-type == color and $number != 1 {
-      @error "`#{$brand-name}` has only one color and you're asking for number `#{$number}`";
+    @else if $brand-color-type == list {
+      $brand-color: nth($brand-color, $number);
     }
-
-    @else {
-      @error "The color assigned to the `#{$brand-name}` brand is not a valid color: #{$brand-colors}";
-    }
-
   }
   @else {
     @error "The brand you are looking for does not exist or is misspelled: '#{$string-name}'";
   }
 
+  $brand-color-type: type-of($brand-color);
+  @if $brand-color-type != color {
+    @error "The color number `#{$number}` of `#{$brand-name}` is not a valid color: `#{$brand-color}`";
+  }
+
   @return $brand-color;
 }
-
-// .class {
-//   color: brandcolor(500px);
-//   list: brandcolor(4ormat,2);
-//   invalid-color: brandcolor(volta);
-//   list-no-exist-color: brandcolor(about me,6);
-// }
