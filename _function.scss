@@ -2,6 +2,7 @@
   $string-name: to-string($name);
   $string-name: str-replace($string-name," ","-");
   $string-name: str-replace($string-name,"_","-");
+  $string-name: str-replace($string-name,"'","");
 
   $brand-key:   $string-name;
   $brand-name:  str-replace($brand-key,"-"," ");
