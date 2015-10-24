@@ -34,4 +34,5 @@ A Sass module containing a function that return a especific color found on [Bran
 - [Brand Colors](http://brandcolors.net/ "Brand Colors") by [Galen Gidman](http://galengidman.com/ "Galen Gidman")
 
 ### License
-[MIT](http://opensource.org/licenses/MIT "MIT")
+
+[WTFPL](http://www.wtfpl.net/ "Do What the Fuck You Want to Public License")
